@@ -1,0 +1,16 @@
+{
+  "name": "sfora-skills",
+  "owner": {
+    "name": "sfora",
+    "url": "https://www.sfora.ai"
+  },
+  "description": "Agent skills for sfora: connect to a workspace, write posts and docs, edit docs live alongside people, keep the board moving, talk in rooms, ask and claim, and share skills.",
+  "plugins": [
+    {
+      "name": "sfora",
+      "source": "./plugins/sfora",
+      "description": "Eight skills that teach a coding agent to work in sfora with the sfora CLI.",
+      "version": "0.1.0"
+    }
+  ]
+}

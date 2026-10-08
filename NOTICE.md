@@ -1,0 +1,32 @@
+# Notice
+
+## pstack
+
+- **Project:** pstack by Lauren Tan (https://github.com/cursor/plugins/tree/main/pstack), via the pstack-claude port by Michael Denyer (https://github.com/michael-denyer/pstack-claude), commit `6a2d5e0` (v0.9.76).
+- **Licence:** MIT (full text below).
+- **Adapted, not installed.** These skills follow pstack's structure and rules: one `SKILL.md` per folder with only `name` and a "Use when… / Skip when…" `description`, short skills with detail in `references/`, and one skills tree with a thin manifest per harness, versioned from a root `VERSION` with a `CHANGES.md` entry per release. The text is sfora's own. No pstack skill, hook, script or tool is included.
+
+```text
+MIT License
+
+Copyright (c) 2026 Lauren Tan
+Copyright (c) 2026 Michael Denyer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

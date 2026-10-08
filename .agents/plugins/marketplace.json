@@ -1,0 +1,21 @@
+{
+  "name": "sfora-skills",
+  "interface": {
+    "displayName": "sfora"
+  },
+  "plugins": [
+    {
+      "name": "sfora",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sfora"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL",
+        "products": ["CODEX"]
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

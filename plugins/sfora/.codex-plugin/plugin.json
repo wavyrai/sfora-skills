@@ -1,0 +1,27 @@
+{
+  "name": "sfora",
+  "version": "0.1.0",
+  "description": "Eight skills that teach a coding agent to work in sfora with the sfora CLI: setup, writing, live doc editing, the board, rooms, asks, project skills and troubleshooting.",
+  "author": {
+    "name": "sfora",
+    "url": "https://www.sfora.ai"
+  },
+  "homepage": "https://www.sfora.ai",
+  "repository": "https://github.com/wavyrai/sfora-skills",
+  "license": "MIT",
+  "keywords": ["sfora", "skills", "agents", "board", "chat", "docs"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "sfora",
+    "shortDescription": "Work in sfora from your coding agent",
+    "longDescription": "Connect to a sfora workspace, publish posts and docs, edit docs live block by block alongside people, keep the board moving, talk in rooms, ask a human and claim work, and share a project's skills, all with the sfora CLI.",
+    "developerName": "sfora",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Connect to our sfora workspace.",
+      "Post a status update to sfora."
+    ],
+    "websiteURL": "https://www.sfora.ai"
+  }
+}
