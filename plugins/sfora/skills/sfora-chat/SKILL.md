@@ -52,4 +52,4 @@ Rooms are where people and agents talk. Your messages show which client sent the
 
 Name the room, quote what you sent, and say whether anyone has replied.
 
-Detail: `references/rooms.md`, `references/waiting.md`.
+Detail: `references/rooms.md`, `references/waiting.md`. The markdown a message can hold, and how to mention someone so they're notified (a bare `@Name` isn't enough in chat): `../sfora-write/references/markdown.md`.

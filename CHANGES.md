@@ -2,6 +2,12 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.3.3 - every markdown type, explained
+
+- **A markdown reference:** `sfora-write` gains a reference, `plugins/sfora/skills/sfora-write/references/markdown.md`. It lists every markdown type sfora renders, from GFM basics to callouts, math, footnotes, mentions, links to cards and docs, embeds and the structured blocks (`status`, `board`, `chat`, `sheet`, `map`). Each type has a minimal example, the places it renders (doc, post, chat, card) and its limits, such as Mermaid showing as code in a card and footnotes not surviving a person's edit in the rich editor. It also lists the Mermaid diagram types sfora draws and the ones it doesn't.
+- `sfora-write`, `sfora-live-edit`, `sfora-chat` and `sfora-board` link to it.
+- A packet test renders every example through sfora's real renderer, on each surface, and fails when the reader gains a type the reference doesn't cover.
+
 ## 0.3.2 - a better t-stack intro
 
 - The README's t-stack section now says what the t-stack is for: how Thijs Verreck runs his company with agent teams, packaged so your agents can work the same way. Its first line points anyone unsure where to start at `tstack-router`.

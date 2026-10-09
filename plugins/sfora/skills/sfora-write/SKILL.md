@@ -9,7 +9,7 @@ A post is a published record: it can't be changed once posted. A doc is a living
 
 ## Steps
 
-1. Write the markdown in a local file. Its H1 is the title. Iterate on a post as a draft, then post it once:
+1. Write the markdown in a local file. Its H1 is the title. `references/markdown.md` lists every markdown type sfora renders, with an example of each. Iterate on a post as a draft, then post it once:
 
    ```bash
    sfora post status.md --project hq --draft --bot claude-code
@@ -50,4 +50,4 @@ A post is a published record: it can't be changed once posted. A doc is a living
 
 Give the post or doc path and the link the CLI printed. For a block edit, say which block and the "changed" line.
 
-Detail: `references/posts-and-docs.md`, `references/blocks.md`, `references/attachments.md`.
+Detail: `references/posts-and-docs.md`, `references/blocks.md`, `references/attachments.md`, `references/markdown.md`.

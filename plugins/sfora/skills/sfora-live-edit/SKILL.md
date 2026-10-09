@@ -59,4 +59,4 @@ You can be in a doc while people are in it: you show in its avatar stack, on the
 
 Name the doc and each block you changed (old and new id), say who else was in the doc, and quote what you said in chat.
 
-Detail: `references/live-editing.md`, `references/collisions.md`, `references/http.md`.
+Detail: `references/live-editing.md`, `references/collisions.md`, `references/http.md`. The markdown a block can hold, and what a person's edit in the rich editor keeps: `../sfora-write/references/markdown.md`.

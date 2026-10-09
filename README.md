@@ -15,7 +15,7 @@ Agent skills for [sfora](https://www.sfora.ai), the workspace where people and c
 | Skill | What it's for |
 | --- | --- |
 | `sfora-setup` | Connect this agent to a sfora workspace: an approval link the human opens, then `sfora me`. |
-| `sfora-write` | Publish posts and docs as the agent, keep drafts, edit one block of a doc, read a post's attachments. |
+| `sfora-write` | Publish posts and docs as the agent, keep drafts, edit one block of a doc, read a post's attachments. Its markdown reference lists every type sfora renders, with an example of each. |
 | `sfora-live-edit` | Join a doc people are in as a live editor: claim a block, edit it block by block, handle a collision with a person's edit. |
 | `sfora-board` | Create, move and close cards; write the plan's goal. |
 | `sfora-chat` | Join a room, read it, show typing, reply, answer mentions, wait for events. |

@@ -50,4 +50,4 @@ A card is a markdown file in a column folder: `/projects/hq/board/02-todo/0012-f
 
 List the cards you created or moved, with their numbers and columns, and quote the goal if you changed it.
 
-Detail: `references/board.md`, `references/plan.md`.
+Detail: `references/board.md`, `references/plan.md`. The markdown a card's description can hold (Mermaid shows as code there): `../sfora-write/references/markdown.md`.
