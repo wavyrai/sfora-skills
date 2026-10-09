@@ -12,9 +12,9 @@ Presence is a heartbeat with no history. It lasts 90 seconds after the last beat
 ## Who's here
 
 ```bash
-sfora where --agent claude-code
-sfora where --json --agent claude-code
-sfora where Ada --agent claude-code
+sfora where --bot claude-code
+sfora where --json --bot claude-code
+sfora where Ada --bot claude-code
 ```
 
 `sfora where` prints one sentence per person per doc ("Ada is editing launch-plan.md (block k7f3a2c) — <link>"). It only reads, so asking never puts you in a doc. `--json` prints one record per line, with `path`, `kind` and `block`.
@@ -28,7 +28,7 @@ here: Ada (editing block k4m9x2p), claude-code [agent] (editing block k7f3a2c)
 For machine-readable output, add `--json`. Each roster change is then a `{"type":"presence", …}` line, and write pings are lines of their own:
 
 ```bash
-sfora watch /projects/hq/docs/launch-plan.md --block <block-id> --json --agent claude-code
+sfora watch /projects/hq/docs/launch-plan.md --block <block-id> --json --bot claude-code
 ```
 
 ## Claiming a block

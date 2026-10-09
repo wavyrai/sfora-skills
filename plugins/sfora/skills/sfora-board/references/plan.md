@@ -3,8 +3,8 @@
 Each project has `/projects/<project>/plan.md`: the goal, what's decided, what's still open and what's in flight. sfora builds most of it from the board. You write one section: `## the goal`.
 
 ```bash
-sfora cat /projects/hq/plan.md --agent claude-code > plan.md
-sfora put /projects/hq/plan.md plan.md --agent claude-code
+sfora cat /projects/hq/plan.md --bot claude-code > plan.md
+sfora put /projects/hq/plan.md plan.md --bot claude-code
 ```
 
 ## Writing the goal

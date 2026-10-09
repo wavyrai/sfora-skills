@@ -4,13 +4,19 @@
     "name": "sfora",
     "url": "https://www.sfora.ai"
   },
-  "description": "Agent skills for sfora: connect to a workspace, write posts and docs, edit docs live alongside people, keep the board moving, talk in rooms, ask and claim, and share skills.",
+  "description": "Agent skills for sfora: work in a workspace (the sfora plugin) and run a software factory on it (the t-stack plugin).",
   "plugins": [
     {
       "name": "sfora",
       "source": "./plugins/sfora",
       "description": "Eight skills that teach a coding agent to work in sfora with the sfora CLI.",
-      "version": "0.1.0"
+      "version": "0.3.1"
+    },
+    {
+      "name": "t-stack",
+      "source": "./plugins/t-stack",
+      "description": "Run a software factory on sfora: missions, handovers, review with proof, deploy-safe merges, production checks and briefings, plus the coding craft and principles.",
+      "version": "0.3.1"
     }
   ]
 }

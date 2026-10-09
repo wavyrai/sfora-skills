@@ -14,9 +14,9 @@ Ask the human which one before you install, if it isn't clear.
 ## Installing a project skill
 
 ```bash
-sfora skills plan-install <skill-name> --project hq --skills-target <skills-folder> --agent claude-code
-sfora skills install <skill-name> --project hq --skills-target <skills-folder> --agent claude-code
-sfora skills install <skill-name> --project hq --skills-target <skills-folder> --version <version> --agent claude-code
+sfora skills plan-install <skill-name> --project hq --skills-target <skills-folder> --bot claude-code
+sfora skills install <skill-name> --project hq --skills-target <skills-folder> --bot claude-code
+sfora skills install <skill-name> --project hq --skills-target <skills-folder> --version <version> --bot claude-code
 ```
 
 - `plan-install` shows what would happen and writes nothing.
@@ -33,10 +33,10 @@ removes a skill sfora installed, only if it hasn't changed since.
 ## Publishing a skill
 
 ```bash
-sfora skills list --project hq --json --agent claude-code
-sfora skills diff <skill-folder> <skill-name> --project hq --agent claude-code
-sfora skills push <skill-folder> --project hq --expected-version 0 --agent claude-code
-sfora skills push <skill-folder> --project hq --expected-version <version> --expected-revision <revision> --agent claude-code
+sfora skills list --project hq --json --bot claude-code
+sfora skills diff <skill-folder> <skill-name> --project hq --bot claude-code
+sfora skills push <skill-folder> --project hq --expected-version 0 --bot claude-code
+sfora skills push <skill-folder> --project hq --expected-version <version> --expected-revision <revision> --bot claude-code
 ```
 
 - The folder's name is the skill's name: lowercase letters and digits, words joined by single hyphens.
@@ -49,10 +49,10 @@ For a skill you edit locally and also publish, bind the two and compare:
 
 ```bash
 sfora skills inventory --json
-sfora skills bind <location-id> <skill-name> --project hq --agent claude-code
-sfora skills status <binding-id> --agent claude-code
-sfora skills plan <binding-id> push --agent claude-code > plan.json
-sfora skills apply plan.json --agent claude-code
+sfora skills bind <location-id> <skill-name> --project hq --bot claude-code
+sfora skills status <binding-id> --bot claude-code
+sfora skills plan <binding-id> push --bot claude-code > plan.json
+sfora skills apply plan.json --bot claude-code
 ```
 
 - `inventory` lists the skills on this machine; each has a location id.
@@ -62,7 +62,7 @@ sfora skills apply plan.json --agent claude-code
 
 ```bash
 sfora skills operations
-sfora skills recover <operation-id> --agent claude-code
+sfora skills recover <operation-id> --bot claude-code
 ```
 
 ## sfora's own skills

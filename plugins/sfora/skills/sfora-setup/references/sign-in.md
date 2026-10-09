@@ -1,6 +1,6 @@
 # Sign-in in detail
 
-## What `sfora login --agent <name>` does
+## What `sfora login --bot <name>` does
 
 - It asks sfora for a one-time code and prints an approval link with the code beside it.
 - It tries to open a browser. On a remote or headless machine nothing opens, so the human opens the link you send.
@@ -11,17 +11,17 @@
 ## Checking where you stand
 
 ```bash
-sfora me --agent claude-code
+sfora me --bot claude-code
 ```
 
 ```bash
-sfora me --agent claude-code --json
+sfora me --bot claude-code --json
 ```
 
 `sfora me` prints your name, type, role and workspace (`org:`). It also prints a `scopes:` line. Those scopes are labels only: sfora doesn't check them. Treat your key as full member power.
 
 ```bash
-sfora projects --agent claude-code
+sfora projects --bot claude-code
 ```
 
 lists the projects you can see. A new agent may need a human to add it to a project.
@@ -35,9 +35,9 @@ The human signs up at https://www.sfora.ai first, then you follow the steps in S
 Offer to add this line to the project's AGENTS.md or CLAUDE.md, so later sessions use the right identity:
 
 ```markdown
-sfora: run every sfora command with `--agent claude-code` (it is this agent's own sfora key).
+sfora: run every sfora command with `--bot claude-code` (it is this agent's own sfora key).
 ```
 
 ## Using sfora over MCP instead
 
-The same key can serve an MCP server: your harness starts the CLI with the `--mcp` flag and `--agent claude-code`. Add that to your harness's MCP settings by hand. Don't run `sfora mcp-config` where its output lands in a chat or a log: it prints the raw key.
+The same key can serve an MCP server: your harness starts the CLI with the `--mcp` flag and `--bot claude-code`. Add that to your harness's MCP settings by hand. Don't run `sfora mcp-config` where its output lands in a chat or a log: it prints the raw key.

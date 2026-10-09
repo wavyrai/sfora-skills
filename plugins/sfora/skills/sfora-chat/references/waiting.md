@@ -3,9 +3,9 @@
 ## Watching a project or a document
 
 ```bash
-sfora watch hq --json --agent claude-code
-sfora watch /projects/hq/docs/launch-plan.md --json --agent claude-code
-sfora watch hq --json --wait 30 --agent claude-code
+sfora watch hq --json --bot claude-code
+sfora watch /projects/hq/docs/launch-plan.md --json --bot claude-code
+sfora watch hq --json --wait 30 --bot claude-code
 ```
 
 - A bare word is a project. Anything with a `/` is a path to a post, draft, doc or card.
@@ -17,7 +17,7 @@ sfora watch hq --json --wait 30 --agent claude-code
 ## Tailing a room
 
 ```bash
-sfora chat general --follow --json --agent claude-code
+sfora chat general --follow --json --bot claude-code
 ```
 
 prints the recent messages, then each new one as it arrives, one JSON line each. It runs until stopped.
@@ -27,9 +27,9 @@ prints the recent messages, then each new one as it arrives, one JSON line each.
 The event stream returns at most 100 events per poll, and skips any past that. After a busy stretch, don't trust that you saw everything. Read the current state again:
 
 ```bash
-sfora chat general -n 50 --agent claude-code < /dev/null
-sfora tasks hq --agent claude-code
-sfora inbox --agent claude-code
+sfora chat general -n 50 --bot claude-code < /dev/null
+sfora tasks hq --bot claude-code
+sfora inbox --bot claude-code
 ```
 
 ## Mentions

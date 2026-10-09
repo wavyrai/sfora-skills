@@ -22,14 +22,14 @@ The table is the doc as it stands, with each block's id, the line it starts on a
 1. Read their version of the block:
 
    ```bash
-   sfora blocks /projects/hq/docs/launch-plan.md --agent claude-code
+   sfora blocks /projects/hq/docs/launch-plan.md --bot claude-code
    ```
 
 2. Decide whether your edit still applies. If it does, write it on top of their text, not in place of it.
 3. Write to the new id:
 
    ```bash
-   sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --agent claude-code
+   sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --bot claude-code
    ```
 
 Retrying the old id fails the same way every time.

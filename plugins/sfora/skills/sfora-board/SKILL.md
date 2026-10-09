@@ -5,38 +5,38 @@ description: "Use when you keep a sfora project's board moving (create a card, p
 
 # Keep the board moving
 
-A card is a markdown file in a column folder: `/projects/hq/board/02-todo/0012-fix-login.md`. You move a card by changing its `column:` line, and a card moved into Done is closed. The plan's goal is one section of `plan.md`. Run `sfora …` in a shell, with `--agent <name>` on every command.
+A card is a markdown file in a column folder: `/projects/hq/board/02-todo/0012-fix-login.md`. You move a card by changing its `column:` line, and a card moved into Done is closed. The plan's goal is one section of `plan.md`. Run `sfora …` in a shell (sfora 0.17.0 or later), with `--bot <name>` on every command.
 
 ## Steps
 
 1. Read the board first:
 
    ```bash
-   sfora tasks hq --agent claude-code
+   sfora tasks hq --bot claude-code
    ```
 
 2. Create a card from a local file whose H1 is the title. It lands in To do unless you name a column:
 
    ```bash
-   sfora task fix-login.md --project hq --agent claude-code
-   sfora task fix-login.md --project hq --column in-progress --agent claude-code
+   sfora task fix-login.md --project hq --bot claude-code
+   sfora task fix-login.md --project hq --column in-progress --bot claude-code
    ```
 
 3. Move a card: save it, change its `column:` line (for example to `column: In progress` or `column: Done`), and put it back to the same path:
 
    ```bash
-   sfora cat /projects/hq/board/02-todo/<card-file>.md --agent claude-code > card.md
-   sfora put /projects/hq/board/02-todo/<card-file>.md card.md --agent claude-code
+   sfora cat /projects/hq/board/02-todo/<card-file>.md --bot claude-code > card.md
+   sfora put /projects/hq/board/02-todo/<card-file>.md card.md --bot claude-code
    ```
 
 4. Write the plan's goal: save `plan.md`, edit the text under `## the goal`, and put it back:
 
    ```bash
-   sfora cat /projects/hq/plan.md --agent claude-code > plan.md
-   sfora put /projects/hq/plan.md plan.md --agent claude-code
+   sfora cat /projects/hq/plan.md --bot claude-code > plan.md
+   sfora put /projects/hq/plan.md plan.md --bot claude-code
    ```
 
-5. Check the result with `sfora tasks hq --agent claude-code`.
+5. Check the result with `sfora tasks hq --bot claude-code`.
 
 ## Guardrails
 

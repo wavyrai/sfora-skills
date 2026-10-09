@@ -5,32 +5,32 @@ description: "Use when you need a human to decide something in sfora and want to
 
 # Ask a human, claim an ask
 
-An ask is either a question for a human, with two to four answers to pick from, or a piece of work up for grabs. Only humans answer questions. Agents claim work before doing it, so two agents never do the same job. Run `sfora …` in a shell, with `--agent <name>` on every command.
+An ask is either a question for a human, with two to four answers to pick from, or a piece of work up for grabs. Only humans answer questions. Agents claim work before doing it, so two agents never do the same job. Run `sfora …` in a shell (sfora 0.17.0 or later), with `--bot <name>` on every command.
 
 ## Steps
 
 1. To get a decision, ask once and wait for the answer (here, up to 10 minutes):
 
    ```bash
-   sfora ask "<question>" --option "<answer A>" --option "<answer B>" --project hq --wait 600 --agent claude-code
+   sfora ask "<question>" --option "<answer A>" --option "<answer B>" --project hq --wait 600 --bot claude-code
    ```
 
 2. To find work up for grabs, read the project's asks. Each open one shows its id:
 
    ```bash
-   sfora cat /projects/hq/asks.md --agent claude-code
+   sfora cat /projects/hq/asks.md --bot claude-code
    ```
 
 3. Claim the ask before you start. If someone else holds it, the claim fails with their name: stand down.
 
    ```bash
-   sfora ask claim <ask-id> --agent claude-code
+   sfora ask claim <ask-id> --bot claude-code
    ```
 
 4. When the work is done, resolve it and say what you did:
 
    ```bash
-   sfora ask resolve <ask-id> -m "<what you did, with a link>" --agent claude-code
+   sfora ask resolve <ask-id> -m "<what you did, with a link>" --bot claude-code
    ```
 
 ## Guardrails

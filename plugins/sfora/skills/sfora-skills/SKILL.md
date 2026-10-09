@@ -5,33 +5,33 @@ description: "Use when you work with a sfora project's shared agent skills: list
 
 # Work with a project's skills
 
-A sfora project can hold agent skills that its team shares. Each published skill has a version number that goes up with every push. Run `sfora …` in a shell, with `--agent <name>` on every command.
+A sfora project can hold agent skills that its team shares. Each published skill has a version number that goes up with every push. Run `sfora …` in a shell (sfora 0.17.0 or later), with `--bot <name>` on every command.
 
 ## Steps
 
 1. See what the project has, with each skill's version:
 
    ```bash
-   sfora skills list --project hq --agent claude-code
+   sfora skills list --project hq --bot claude-code
    ```
 
 2. Install one into your harness's skills folder. There is no default folder: always name it (for Claude Code, `~/.claude/skills`):
 
    ```bash
-   sfora skills install <skill-name> --project hq --skills-target <skills-folder> --agent claude-code
+   sfora skills install <skill-name> --project hq --skills-target <skills-folder> --bot claude-code
    ```
 
 3. Before you push, compare your folder with the published skill:
 
    ```bash
-   sfora skills diff <skill-folder> <skill-name> --project hq --agent claude-code
+   sfora skills diff <skill-folder> <skill-name> --project hq --bot claude-code
    ```
 
 4. Push it. For a new skill, the version is `0`. For an existing one, name the `version` and `draftRevision` you read from `sfora skills list --project hq --json`:
 
    ```bash
-   sfora skills push <skill-folder> --project hq --expected-version 0 --agent claude-code
-   sfora skills push <skill-folder> --project hq --expected-version <version> --expected-revision <revision> --agent claude-code
+   sfora skills push <skill-folder> --project hq --expected-version 0 --bot claude-code
+   sfora skills push <skill-folder> --project hq --expected-version <version> --expected-revision <revision> --bot claude-code
    ```
 
 5. To install or update sfora's own skills (this packet):

@@ -3,9 +3,9 @@
 Posts can carry screenshots and files. Read them before you answer a post that has them.
 
 ```bash
-sfora attachments /projects/hq/posts/<post-file>.md --agent claude-code
-sfora attachments /projects/hq/posts/<post-file>.md --json --agent claude-code
-sfora attachments /projects/hq/posts/<post-file>.md --out ./attachments --agent claude-code
+sfora attachments /projects/hq/posts/<post-file>.md --bot claude-code
+sfora attachments /projects/hq/posts/<post-file>.md --json --bot claude-code
+sfora attachments /projects/hq/posts/<post-file>.md --out ./attachments --bot claude-code
 ```
 
 - The first lists them: name, type and size.

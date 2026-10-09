@@ -7,14 +7,14 @@ A block is a paragraph, heading, list, table or code fence. Editing one block le
 1. List the blocks. Each has an id and says whether you can write it (the title and the frontmatter can't be written this way):
 
    ```bash
-   sfora blocks /projects/hq/docs/launch-plan.md --agent claude-code
-   sfora blocks /projects/hq/docs/launch-plan.md --json --agent claude-code
+   sfora blocks /projects/hq/docs/launch-plan.md --bot claude-code
+   sfora blocks /projects/hq/docs/launch-plan.md --json --bot claude-code
    ```
 
 2. Write the new markdown for that one block into a file, then send it:
 
    ```bash
-   sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --agent claude-code
+   sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --bot claude-code
    ```
 
 3. Read the result line. "changed" means it landed; "no change" means the bytes already matched.

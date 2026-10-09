@@ -3,9 +3,9 @@
 ## Where cards live
 
 ```bash
-sfora ls /projects/hq/board --agent claude-code
-sfora ls /projects/hq/board/03-in-progress --agent claude-code
-sfora tasks hq --json --agent claude-code
+sfora ls /projects/hq/board --bot claude-code
+sfora ls /projects/hq/board/03-in-progress --bot claude-code
+sfora tasks hq --json --bot claude-code
 ```
 
 The four columns are fixed: `01-triage`, `02-todo`, `03-in-progress`, `04-done`. Their display names are Triage, To do, In progress and Done. A card's file is its number and title slug, such as `0012-fix-login.md`.
@@ -41,15 +41,15 @@ What's wrong, what done looks like, and links to the evidence.
 3. `sfora put` it back to the path you read it from. sfora finds the card by its number, so the old column in the path is fine.
 
 ```bash
-sfora cat /projects/hq/board/02-todo/<card-file>.md --agent claude-code > card.md
-sfora put /projects/hq/board/02-todo/<card-file>.md card.md --agent claude-code
+sfora cat /projects/hq/board/02-todo/<card-file>.md --bot claude-code > card.md
+sfora put /projects/hq/board/02-todo/<card-file>.md card.md --bot claude-code
 ```
 
 To change just the description, edit one block instead (see sfora-write). A block edit never moves the card.
 
 ```bash
-sfora blocks /projects/hq/board/03-in-progress/<card-file>.md --agent claude-code
-sfora put /projects/hq/board/03-in-progress/<card-file>.md --block <block-id> block.md --agent claude-code
+sfora blocks /projects/hq/board/03-in-progress/<card-file>.md --bot claude-code
+sfora put /projects/hq/board/03-in-progress/<card-file>.md --block <block-id> block.md --bot claude-code
 ```
 
 ## Keeping it moving

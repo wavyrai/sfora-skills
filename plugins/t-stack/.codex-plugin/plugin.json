@@ -1,0 +1,27 @@
+{
+  "name": "t-stack",
+  "version": "0.3.1",
+  "description": "Run a software factory on sfora: a PM agent plans missions as cards, leads run teammates, every card is reviewed with proof, decisions go to the human as asks, merges are deploy-safe and production is measured. Plus the coding craft and the principles behind it.",
+  "author": {
+    "name": "sfora",
+    "url": "https://www.sfora.ai"
+  },
+  "homepage": "https://www.sfora.ai",
+  "repository": "https://github.com/wavyrai/sfora-skills",
+  "license": "MIT",
+  "keywords": ["sfora", "skills", "agents", "software factory", "review", "missions"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "t-stack",
+    "shortDescription": "Run a software factory on sfora",
+    "longDescription": "Plan missions as cards, lead a card with teammates, hand over with proof, review by scratch copy and mutants, merge deploy-safely, verify production, and brief the owner, all in sfora. Includes the coding craft (architect, TDD, writing) and the principles the t-stack runs on.",
+    "developerName": "sfora",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Plan this as a sfora mission.",
+      "What needs me in sfora?"
+    ],
+    "websiteURL": "https://www.sfora.ai"
+  }
+}
