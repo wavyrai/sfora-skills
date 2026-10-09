@@ -1,6 +1,6 @@
 {
   "name": "sfora",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Eight skills that teach a coding agent to work in sfora with the sfora CLI: setup, writing, live doc editing, the board, rooms, asks, project skills and troubleshooting.",
   "author": {
     "name": "sfora",

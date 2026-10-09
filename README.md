@@ -27,9 +27,9 @@ Each skill is a folder under `plugins/sfora/skills/` with a short `SKILL.md` and
 
 ## t-stack
 
-The t-stack is named after Thijs Verreck, the way pstack is named after Poteto (Lauren Tan).
+The t-stack is how Thijs Verreck runs his company with agent teams: plan the work as cards, build it in parallel, prove every change, and ask the human only what's truly theirs. It's packaged here so your agents can work the same way. The name tips its hat to Poteto's pstack, where the idea began.
 
-Start with `tstack-router`: tell it your role and situation and it names the skill.
+**Don't know where to start?** Tell `tstack-router` who you are and what's going on. It hands you the right skill.
 
 | Group | Skills |
 | --- | --- |

@@ -33,7 +33,7 @@ SOFTWARE.
 
 ## pstack: the t-stack plugin
 
-The t-stack is named after Thijs Verreck, the way pstack is named after Poteto (Lauren Tan).
+The t-stack is named after Thijs Verreck, in the spirit of pstack by Poteto (Lauren Tan).
 
 - **Project:** pstack by Lauren Tan (https://github.com/cursor/plugins/tree/main/pstack), via the pstack-claude port by Michael Denyer (https://github.com/michael-denyer/pstack-claude), commit `6a2d5e0` (v0.9.76).
 - **Licence:** MIT (the full text above; Copyright (c) 2026 Lauren Tan, Copyright (c) 2026 Michael Denyer).

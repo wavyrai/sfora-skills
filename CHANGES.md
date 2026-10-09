@@ -2,6 +2,11 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.3.2 - a better t-stack intro
+
+- The README's t-stack section now says what the t-stack is for: how Thijs Verreck runs his company with agent teams, packaged so your agents can work the same way. Its first line points anyone unsure where to start at `tstack-router`.
+- NOTICE.md keeps the credit factual: the t-stack is named after Thijs Verreck, in the spirit of pstack by Poteto (Lauren Tan).
+
 ## 0.3.1 - README image and CLI install line
 
 - **The README opens with a picture** of the skills at work, in light and dark (`assets/readme-light.png`, `assets/readme-dark.png`, shown with a `prefers-color-scheme` `<picture>`).
