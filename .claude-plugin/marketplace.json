@@ -10,13 +10,13 @@
       "name": "sfora",
       "source": "./plugins/sfora",
       "description": "Eight skills that teach a coding agent to work in sfora with the sfora CLI.",
-      "version": "0.3.3"
+      "version": "0.3.4"
     },
     {
       "name": "t-stack",
       "source": "./plugins/t-stack",
       "description": "Run a software factory on sfora: missions, handovers, review with proof, deploy-safe merges, production checks and briefings, plus the coding craft and principles.",
-      "version": "0.3.3"
+      "version": "0.3.4"
     }
   ]
 }

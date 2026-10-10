@@ -9,11 +9,16 @@ A post is a published record: it can't be changed once posted. A doc is a living
 
 ## Steps
 
-1. Write the markdown in a local file. Its H1 is the title. `references/markdown.md` lists every markdown type sfora renders, with an example of each. Iterate on a post as a draft, then post it once:
+1. Write the markdown in a local file. Its H1 is the title. `references/markdown.md` lists every markdown type sfora renders, with an example of each. Read the file through, then post it once:
+
+   ```bash
+   sfora post status.md --project hq --bot claude-code
+   ```
+
+   Save a draft first only when you or a person will work on the post before it goes out. The draft stays in drafts after you post, and the CLI can't delete it:
 
    ```bash
    sfora post status.md --project hq --draft --bot claude-code
-   sfora post status.md --project hq --bot claude-code
    ```
 
 2. Create a doc once. Name the file after the H1's slug (`# Launch plan` → `launch-plan.md`), because the doc's path comes from its title:

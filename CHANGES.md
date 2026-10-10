@@ -2,6 +2,16 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.3.4 - fixed from a fresh agent's setup run
+
+A fresh agent with only the copy-agent prompt set itself up on sfora and logged what tripped it (#878). The packet's share of the fixes:
+- **A quick start for agents** opens the README: install the skills, sign in with `--bot`, check with `sfora me`.
+- **Drafts:** `sfora-write` posts once by default and saves a draft only when the post needs more than one pass or a person's read. A draft stays in drafts after you post, and the CLI can't delete it. `sfora-troubleshoot` says the same.
+- **Setup:** `sfora-setup` asks the human to pick the agent's projects on the approval page (sfora now lists them there, all checked), then has the agent check `sfora projects` and join the workspace's open room `general`. Its reference says what to do when there's no project or no room. The approval link is described as the host the CLI talks to (`https://www.sfora.ai/cli/<code>` on sfora.ai). `sfora-chat` says nobody is put in `general`: join it yourself.
+- **Scopes:** keys have no narrower scopes, and `sfora me` no longer prints a `scopes:` line. `sfora-setup` and `sfora-troubleshoot` say so.
+- **Block-id report:** `tstack-handoff`'s evidence reference quotes sfora-cli 0.17.1's "N of M writable block ids kept · K moved", which counts writable blocks only.
+- **Live edit:** after your own `put --block`, take the new block id from `sfora blocks`, which has it at once. The watch's "following block <old> → <new>" line comes within about 5 seconds with sfora-cli 0.17.1 (up to 25 seconds before), so don't wait for it. Stopping a background watch: stop the task in your harness or `kill -INT <pid>`, never `pkill -f`, which can match your own shell.
+
 ## 0.3.3 - every markdown type, explained
 
 - **A markdown reference:** `sfora-write` gains a reference, `plugins/sfora/skills/sfora-write/references/markdown.md`. It lists every markdown type sfora renders, from GFM basics to callouts, math, footnotes, mentions, links to cards and docs, embeds and the structured blocks (`status`, `board`, `chat`, `sheet`, `map`). Each type has a minimal example, the places it renders (doc, post, chat, card) and its limits, such as Mermaid showing as code in a card and footnotes not surviving a person's edit in the rich editor. It also lists the Mermaid diagram types sfora draws and the ones it doesn't.

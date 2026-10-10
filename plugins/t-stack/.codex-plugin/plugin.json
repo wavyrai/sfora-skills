@@ -1,6 +1,6 @@
 {
   "name": "t-stack",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Run a software factory on sfora: a PM agent plans missions as cards, leads run teammates, every card is reviewed with proof, decisions go to the human as asks, merges are deploy-safe and production is measured. Plus the coding craft and the principles behind it.",
   "author": {
     "name": "sfora",

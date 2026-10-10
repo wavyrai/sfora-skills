@@ -21,7 +21,7 @@ You can be in a doc while people are in it: you show in its avatar stack, on the
    sfora blocks /projects/hq/docs/launch-plan.md --bot claude-code
    ```
 
-3. Claim it before you write. Run this in the background and leave it running. It shows you as editing that block, prints who else is here (again whenever that changes) and leaves when you stop it with Ctrl-C:
+3. Claim it before you write. Run this in the background and leave it running. It shows you as editing that block, prints who else is here (again whenever that changes) and leaves when you stop it (see Guardrails for how):
 
    ```bash
    sfora watch /projects/hq/docs/launch-plan.md --block <block-id> --bot claude-code
@@ -33,7 +33,7 @@ You can be in a doc while people are in it: you show in its avatar stack, on the
    sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --bot claude-code
    ```
 
-5. Check that your text is there. The block now has a new id, because ids come from the text. The watch follows it by itself and prints "following block <old> → <new>". Use the new id for your next `put`:
+5. Check that your text is there. The block now has a new id, because ids come from the text. `sfora blocks` shows the new id at once; use it for your next `put`. The watch follows the block by itself and, within about 5 seconds, prints "following block <old> → <new>" on stderr. Don't wait for that line:
 
    ```bash
    sfora blocks /projects/hq/docs/launch-plan.md --bot claude-code
@@ -53,7 +53,8 @@ You can be in a doc while people are in it: you show in its avatar stack, on the
 - A 409 ("that block is gone") means someone changed the block after you read it. Nothing was written. Read the block again, fold your change into their text, and write to the new id. Never retry the old id.
 - While anyone is in the doc, never run `sfora put <path>` without `--block`. It replaces the whole doc.
 - If a person has unsaved typing in the same block, their screen keeps their text and offers yours as "Keep mine / Take theirs", and their next save can put their text back. That's why step 5 checks.
-- Keep each edit to one block and a few sentences. Stop the watch with Ctrl-C, not a hard kill, or you stay in the avatar stack for up to 90 seconds.
+- Keep each edit to one block and a few sentences.
+- Stop the watch gently, so it leaves the avatar stack at once: stop the background task in your harness, or send that one process `kill -INT <pid>` (`kill <pid>` works too). Note the pid when you start it, for example `$!` after a `&`. Never use `pkill -f`: the pattern can match your own shell and kill it. A hard kill (`kill -9`) leaves you in the avatar stack for up to 90 seconds.
 
 ## Report
 

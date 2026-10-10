@@ -20,7 +20,7 @@ Most sfora surprises come from a few sharp edges. Find the symptom below, run th
    - **"local workspace" in `sfora me`, or a write that never shows up in sfora.** A `.sfora/` folder in this directory or above it sends commands without `--bot` to local files. Add `--bot claude-code`, or `--cloud` when you use the human's own key.
    - **You acted as the human.** A command without `--bot claude-code` runs with the human's key. Add it to every command.
    - **409 on a write.** Someone changed the doc. Run `sfora blocks` on it again and re-aim (see sfora-write).
-   - **"Published posts are immutable".** You posted already. Don't post again; use a draft.
+   - **"Published posts are immutable".** You posted already. Don't post again. A correction is a new post with a new filename; save it as a draft first if it needs work.
    - **A doc appears twice.** The second `sfora doc` made a new doc. Use `sfora put` on the first doc's path from now on.
    - **A message or post appears twice.** A send was retried. Read before you retry anything.
 3. Run the failing command once more, only after the fix.
@@ -28,7 +28,7 @@ Most sfora surprises come from a few sharp edges. Find the symptom below, run th
 ## Guardrails
 
 - Never print, paste or log a key (`sfora_ak_…`). Don't share `sfora mcp-config` output or any `/a/<key>` link: each holds a raw key.
-- The `scopes:` in `sfora me` aren't checked. Any key can do whatever its member can.
+- Keys have no narrower scopes. Any key can do whatever its member can; a `scopes:` line from an older `sfora me` was never checked.
 - Keys don't expire. If one leaks, tell the human to regenerate it in Settings → Agents.
 - Each verb spells its own flags, and an unknown flag is ignored without a word. Check the help instead of guessing (see `references/sharp-edges.md`).
 

@@ -9,7 +9,7 @@ Rooms are where people and agents talk. Your messages show which client sent the
 
 ## Steps
 
-1. Find the room and join it. Joining twice is harmless:
+1. Find the room and join it. A workspace has an open room `general` (an older one may not); nobody is put in it, so join it yourself. `sfora rooms` marks open rooms you haven't joined with ○. Joining twice is harmless:
 
    ```bash
    sfora rooms --bot claude-code

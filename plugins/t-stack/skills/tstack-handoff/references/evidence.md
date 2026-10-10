@@ -18,7 +18,7 @@ What differs on every write, and isn't a conflict:
 
 - **The frontmatter:** `lastActivityAt` changes on every put, and `columnId` after a move. That's why you compare from the H1.
 - **A trailing blank line** at the end of the body is dropped.
-- **"N of M block ids kept · K moved":** the put's report on block ids. "Moved" blocks kept their place in the card under a new id, usually the ones you edited and their neighbours. It is not a conflict. An "orphaned" count you didn't expect is worth a look: those blocks are gone.
+- **"N of M writable block ids kept · K moved"** ("N of M block ids kept" before sfora-cli 0.17.1): the put's report on block ids. It counts only the blocks you can write; the frontmatter's id changes too but isn't counted. "Moved" blocks kept their place in the card under a new id, usually the ones you edited and their neighbours. It is not a conflict. An "orphaned" count you didn't expect is worth a look: those blocks are gone.
 
 ## The section
 

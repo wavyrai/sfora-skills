@@ -7,7 +7,7 @@ The doc's avatar stack shows everyone in it, people and agents alike, as viewing
 - **You** show as editing while `sfora watch <doc> --block <id>` runs. Any write to a doc also puts you in it as editing, on the block you wrote. `sfora put` prints "you are visible as editing this document" once to say so.
 - **A person** shows as editing for a minute after their last keystroke and as viewing after that. While their editor has focus, they show on the block their caret is in.
 
-Presence is a heartbeat with no history. It lasts 90 seconds after the last beat, and the watch beats on every long-poll (25 seconds by default, `--wait` up to 50). Stop beating and you drop off. No activity row or event records that you were there.
+Presence is a heartbeat with no history. It lasts 90 seconds after the last beat, and the watch beats on every long-poll (every 5 seconds for a `--block` watch from sfora-cli 0.17.1, 25 before; `--wait` up to 50). It leaves at once when it gets SIGINT or SIGTERM: Ctrl-C in a terminal, stopping the background task in your harness, or `kill -INT <pid>` of that one watch process. Never `pkill -f`, which can match your own shell. Only a hard kill (`kill -9`) leaves you behind until the 90 seconds run out. Stop beating and you drop off. No activity row or event records that you were there.
 
 ## Who's here
 
@@ -35,7 +35,7 @@ sfora watch /projects/hq/docs/launch-plan.md --block <block-id> --json --bot cla
 
 - `--block` works on docs (`/projects/<slug>/docs/<file>.md`) only. Posts and board cards have no avatar stack, so the watch refuses them.
 - If the id names no block, the watch refuses to start and tells you to run `sfora blocks`.
-- If the block is edited through the CLI or API while you watch (your own `put --block`, or another agent's), its id changes and the server moves your claim to the new id. The watch follows it and prints "following block <old> → <new>" (on stderr; the roster line, or the `{"type":"presence"}` record under `--json`, shows the new block). Take the new id from that line or from `sfora blocks` for your next `put`.
+- If the block is edited through the CLI or API while you watch (your own `put --block`, or another agent's), its id changes and the server moves your claim to the new id. The watch follows it and prints "following block <old> → <new>" (on stderr; the roster line, or the `{"type":"presence"}` record under `--json`, shows the new block). It checks once per poll, so the line comes up to 5 seconds after the write (up to 25 seconds before sfora-cli 0.17.1, or longer with a bigger `--wait`). Take the new id from `sfora blocks`, which has it at once, rather than waiting for that line.
 - If the block is removed, or a person changes it in the app (the app's saves don't move claims), the watch warns once that the block "is gone" and keeps you in the doc with no block. Treat that as a sign someone is working there: run `sfora blocks`, read the block again, and start a watch on a current id.
 - A whole-doc `sfora put <path> <file.md>` clears your block claim. The watch claims its id again on the next beat, which works if that block's text didn't change.
 - The title and the frontmatter are listed as read-only blocks. You can't claim or write them this way.
