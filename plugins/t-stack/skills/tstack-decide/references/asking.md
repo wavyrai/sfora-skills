@@ -15,10 +15,21 @@ Write the why on the card first, so the human can read the context in one place.
 Asked in sfora on 8 Oct.
 ```
 
-Then the ask:
+Then the question, in a post (`# Docs ceiling decision`, so `docs-ceiling-decision.md`), and the wait for its answer (sfora 0.18.0 or later):
+
+````markdown
+```question #docs-ceiling
+to: @<member>
+recommend: Raise it, citing Web Analytics
+Raise /docs's ceiling to 309 KB?
+- Raise it, citing Web Analytics
+- Lazy-load Analytics
+```
+````
 
 ```bash
-sfora ask "Raise /docs's ceiling to 309 KB?" --option "Raise it, citing Web Analytics (recommended)" --option "Lazy-load Analytics" --project hq --wait 600 --bot claude-code
+sfora post docs-ceiling-decision.md --project hq --bot claude-code
+sfora answers /projects/hq/posts/docs-ceiling-decision.md --wait 600 --bot claude-code
 ```
 
 ## Recording the answer
@@ -27,10 +38,10 @@ Append, by round-trip, right under the decision section:
 
 ```markdown
 **OWNER DECISIONS (8 Oct)**
-- Raise /docs's ceiling to 309 KB, citing Web Analytics. (Answered in sfora.)
+- Raise /docs's ceiling to 309 KB, citing Web Analytics. (Answered on the decision post.)
 ```
 
-Use `PM DECISIONS` when the PM decided. Quote the human's own words when they added any. Later agents read this section, not the ask.
+Use `PM DECISIONS` when the PM decided. Quote the human's own words when they added any. Later agents read this section, not the post.
 
 ## Who asks whom
 
@@ -38,7 +49,7 @@ Use `PM DECISIONS` when the PM decided. Quote the human's own words when they ad
 |---|---|---|
 | Implementer | Decide, note it in your report to the lead | Tell the lead; the lead decides or escalates |
 | Lead | Decide, "Decided:" line on the card | "Decision for the PM:" on the card (`tstack-handoff`) |
-| PM | Decide, "PM DECISIONS (date)" on the card | One `sfora ask` to the owner, then "OWNER DECISIONS (date)" |
+| PM | Decide, "PM DECISIONS (date)" on the card | One question block to the owner in a post, then "OWNER DECISIONS (date)" |
 
 ## Examples from this programme
 
@@ -50,6 +61,8 @@ Use `PM DECISIONS` when the PM decided. Quote the human's own words when they ad
 - **Yours:** regenerating the design graph instead of hand-merging it.
 - **Yours:** a test's name, a helper's location, the order of commits.
 
-## When the ask times out
+## When the wait runs out, or the question expires
 
-`--wait` ending leaves the ask open. Don't ask again: a second ask is a duplicate the human has to clear. Carry on with any work the decision doesn't block, check the ask later, and say on the card that you're waiting on it.
+`sfora answers --wait` exiting 1 leaves the question open. Don't ask again: the server would join a second block to the open question anyway. Carry on with any work the decision doesn't block, run `sfora answers` later, and say on the card that you're waiting on it.
+
+Exit 3 means the question expired (after 3 days unless `expires:` said otherwise) or was withdrawn. No answer will come. Ask once more in a new block that links the expired one, or carry on without the decision and say so on the card. Never act on your own recommendation as if it had been chosen.

@@ -1,6 +1,6 @@
 ---
 name: sfora-write
-description: "Use when you publish a post or a doc in sfora as the agent, keep a draft, edit one block of a doc, or read a post's attachments (screenshots, files). Covers sfora post, sfora doc, sfora blocks, sfora put and sfora attachments. Skip for board cards and the plan (use sfora-board), chat messages (use sfora-chat), and questions for a human (use sfora-asks)."
+description: "Use when you publish a post or a doc in sfora as the agent, keep a draft, edit one block of a doc, or read a post's attachments (screenshots, files). Covers sfora post, sfora doc, sfora blocks, sfora put and sfora attachments. Skip for board cards and the plan (use sfora-board), chat messages (use sfora-chat), and waiting on a person's decision (use sfora-asks)."
 ---
 
 # Write posts and docs as the agent
@@ -45,6 +45,7 @@ A post is a published record: it can't be changed once posted. A doc is a living
 ## Guardrails
 
 - Post once. Posting again fails ("Published posts are immutable"), and a new filename posts a duplicate.
+- A decision you need from a person goes in a question block in the post, not in a sentence: one block per decision, 2 to 4 options, your pick marked with `recommend:`. `sfora post` checks the blocks before sending and lists the questions it asked. Wait for the answers with `sfora answers` (sfora 0.18.0 or later; see `sfora-asks`).
 - Don't run `sfora doc` twice to update a doc. Use `sfora put` on its path. Find the path with `sfora ls /projects/hq/docs --bot claude-code`.
 - A 409 on `put --block` means the block changed. Run `sfora blocks` again and aim at the new id. Don't retry the old one.
 - `sfora put <path>` with no file reads stdin. Always name the file.

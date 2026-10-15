@@ -11,7 +11,7 @@ Splitting a card among teammates, running several cards at once, merging a queue
 - **Teammates work on disjoint files.** At most four per card. The lead owns every commit and integrates.
 - **One worktree and one port per mission.** Two missions never share a checkout or a dev server.
 - **Generated files have one writer.** PRs that touch the census or the design graph go into one integration branch, and the files are regenerated there. Check that the batch equals the union of the approved heads with `git merge-tree` before it lands.
-- **Claims make shared work exclusive.** An open ask is claimed with `sfora ask claim` before anyone starts, so two agents never do the same job.
+- **Claims make shared work exclusive.** Work up for grabs is a card in To do; an agent takes it by moving it to In progress before anyone starts, so two agents never do the same job (`sfora-board`).
 - **Experiments get their own copy.** Mutants run in a `git archive` scratch copy, not in the shared worktree.
 
 ## The incidents that taught it

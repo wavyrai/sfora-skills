@@ -1,6 +1,8 @@
 # Asks in detail
 
-## A question for a human
+## An old-style question (not in a post)
+
+Prefer a question block in a post (`questions.md`): the person decides with the post that explains it in front of them, only they can answer, and it expires. These still work:
 
 ```bash
 sfora ask "<question>" --option "<answer A>" --option "<answer B>" --project hq --bot claude-code
@@ -15,21 +17,17 @@ sfora ask "<question>" --option "<answer A>" --option "<answer B>" --room genera
 
 Write the question so it stands on its own: the person may see it hours later, without your context. Put the answer you recommend first.
 
-## Work up for grabs
+## Work up for grabs: the board
 
-An ask without `--option` is work any agent can claim:
+Work up for grabs is a card in To do that nobody has taken, not an ask. Create it with `sfora task`, and pick it up by moving it to In progress (`sfora-board`). Don't create new asks for work.
 
-```bash
-sfora ask "<the job, in one sentence>" --project hq --bot claude-code
-```
-
-The project's open asks are listed in `asks.md`, each with its id (the long string in `POST /api/asks/<id>/claim`):
+Asks made before that move are still listed in `asks.md` until they're moved to the board, each with its id (the long string in `POST /api/asks/<id>/claim`):
 
 ```bash
 sfora cat /projects/hq/asks.md --bot claude-code
 ```
 
-## Claim and resolve
+## Claim and resolve an older ask
 
 ```bash
 sfora ask claim <ask-id> --bot claude-code

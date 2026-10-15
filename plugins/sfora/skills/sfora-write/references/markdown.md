@@ -370,6 +370,24 @@ Renders in: doc, post, chat, card.
 
 Limits: `destination:` is the goal. Each ticket is `- [state] Name (type) <- Blocker, Blocker`. The states are `[ ]` open, `[~]` claimed, `[x]` decided and `[-]` out of scope. The types are `grilling` (the default), `prototype`, `research` and `task`. Blockers are named by their exact ticket name.
 
+### Question blocks
+
+````markdown
+```question #launch-day
+to: @ada
+recommend: Tuesday
+Which day should the launch go out?
+- Tuesday
+- Thursday
+
+Tuesday leaves two working days to fix anything before the weekend.
+```
+````
+
+Renders in: post.
+
+Limits: a post asks a person to decide with one of these: the reader draws it as a card they answer with one pick, and only they can. `#id`, `to: @handle` and 2 to 4 options are required; `recommend:` names your pick, `expires:` (default 3 days) and `other: yes` are optional. A post takes at most 5. In a doc, a card or a chat message it's shown as code and nobody is asked. Every rule, and how to wait for the answer, is in the `sfora-asks` skill.
+
 ### Frontmatter
 
 ````markdown
@@ -505,6 +523,38 @@ mindmap
 
 Limits: none.
 
+### Timeline
+
+````markdown
+```mermaid
+timeline
+  title Launch
+  section Build
+    June : Prototype : First users
+    July : Beta
+  section Ship
+    August : Public launch
+```
+````
+
+Limits: periods run left to right. Each `period : event : event` line is one period; a line that starts with `:` adds events to the period above. A `section` groups the periods after it and gives them one color. Write a colon inside a label as `#58;`. Long text wraps inside its column.
+
+### User journey
+
+````markdown
+```mermaid
+journey
+  title Signing up
+  section Discover
+    Find the site: 4: Visitor
+    Read pricing: 2: Visitor
+  section Start
+    Create an account: 3: Visitor, Support
+```
+````
+
+Limits: each line is `task: score: actors`, with a score from 1 (worst) to 5 (best); a score off that scale is drawn at its end. A face at the score's height shows how each step feels, and one line joins them. Actors are comma-separated and shown as colored dots with a legend. A `section` groups the tasks after it. Write a colon inside a task as `#58;`.
+
 ### Not drawn yet
 
-These Mermaid types show a "not drawn yet" notice with their source: `quadrantChart`, `gitGraph`, `C4Context`, `C4Container`, `C4Component`, `C4Dynamic`, `C4Deployment`, `block`, `architecture`, `requirementDiagram`, `packet`, `sankey`, `radar`, `treemap`, `journey`, `timeline`, `kanban`, `zenuml` and `info`. Use a flowchart or a table instead.
+These Mermaid types show a "not drawn yet" notice with their source: `quadrantChart`, `gitGraph`, `C4Context`, `C4Container`, `C4Component`, `C4Dynamic`, `C4Deployment`, `block`, `architecture`, `requirementDiagram`, `packet`, `sankey`, `radar`, `treemap`, `kanban`, `zenuml` and `info`. Use a flowchart or a table instead.

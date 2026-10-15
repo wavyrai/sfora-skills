@@ -29,11 +29,16 @@ Production is the only place a production fact is true. Docs, configs and memory
 
 5. **Dry run first.** The implementer writes the job with a dry-run mode and dedupe keys, so a second run changes nothing. Run it dry and record the counts on the card.
 
-6. **Ask the owner** for the real run of this job, with the counts and the plan. **The owner's go-ahead, one at a time.** An agent sets a production secret or runs a production data job only after the owner has said yes to that specific one, having seen the dry-run counts first (for a secret: the plan and the order). A yes covers that one step, not the next one. Rotating credentials is always the owner's.
+6. **Ask the owner** for the real run of this job, with the counts and the plan, in a post with one question block (`tstack-decide`): `to:` the owner, `recommend:` your plan, and the dry-run counts under the options. **The owner's go-ahead, one at a time.** An agent sets a production secret or runs a production data job only after the owner has said yes to that specific one, having seen the dry-run counts first (for a secret: the plan and the order). A yes covers that one step, not the next one. Rotating credentials is always the owner's.
+
+   Name the post after its H1 (`# Backfill run decision` → `backfill-run-decision.md`), post it once and wait for the answer (sfora 0.18.0 or later):
 
    ```bash
-   sfora ask "<question>" --option "<run it in chunks (recommended)>" --option "Not yet" --project hq --wait 600 --bot claude-code
+   sfora post backfill-run-decision.md --project hq --bot claude-code
+   sfora answers /projects/hq/posts/backfill-run-decision.md --wait 600 --bot claude-code
    ```
+
+   Only an answer of yes to that question, from the owner, is a go-ahead. If it expires (exit 3), there is no go-ahead.
 
 7. **After the real run,** run it dry again. It must find nothing left to do; that proves the job is idempotent and finished. Record the before, real and after counts on the card.
 

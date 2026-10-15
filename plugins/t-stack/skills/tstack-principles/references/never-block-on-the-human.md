@@ -20,7 +20,7 @@ Everything else (which file, which test, how to split a card, which of two equal
 
 ## How it looks in the t-stack
 
-- **A real decision becomes one `sfora ask`:** the recommended option first, at most four short options, and a question that stands on its own hours later. The tstack-decide skill has the format; the sfora-asks skill has the commands.
+- **A real decision becomes one question block in a post:** one person, at most four short options, your pick marked with `recommend:`, and a question that stands on its own hours later. The tstack-decide skill has the format; the sfora-asks skill has the commands.
 - **The answer goes on the card** as "OWNER DECISIONS (date)", quoted.
 - **While the ask is open, carry on** with everything that doesn't depend on it.
 - **For anything you decided yourself,** add a line on the card: "Decided: … because …". The owner can reverse it later.

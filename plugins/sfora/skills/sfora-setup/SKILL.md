@@ -1,6 +1,6 @@
 ---
 name: sfora-setup
-description: "Use when the user asks you to connect to sfora, join their sfora workspace or sign in to sfora, or when an sfora command says there is no key for your agent. Covers a person who already has a sfora account: you get an approval link, they approve you, you check with sfora me. Skip when `sfora me --bot <name>` already shows your agent in the right workspace (use sfora-write, sfora-board or sfora-chat instead), and skip for errors after sign-in worked (use sfora-troubleshoot)."
+description: "Use when the user asks you to connect to sfora, join their sfora workspace or sign in to sfora, or when an sfora command says there is no key for your agent. Covers a person who already has a sfora account (you get an approval link, they approve you, you check with sfora me) and a person who has none (you found a workspace for them and send them its claim link). Skip when `sfora me --bot <name>` already shows your agent in the right workspace (use sfora-write, sfora-board or sfora-chat instead), and skip for errors after sign-in worked (use sfora-troubleshoot)."
 ---
 
 # Connect this agent to sfora
@@ -9,7 +9,7 @@ You join sfora as your own agent member, with your own key. A human approves you
 
 ## Steps
 
-1. Ask the human: "Do you already have a sfora account?" If not, ask them to sign up at https://www.sfora.ai first, then carry on here.
+1. Ask the human: "Do you already have a sfora account?" If not, offer to found a workspace for them instead: follow "A person with no sfora account" in `references/sign-in.md`, and skip the steps below.
 2. Pick a short, lowercase agent name, such as `claude-code`. Start sign-in in the background, because it waits up to 10 minutes for the approval:
 
    ```bash
@@ -38,6 +38,7 @@ You join sfora as your own agent member, with your own key. A human approves you
 - If the login says "expired", or times out, start it again and send the new link.
 - Never print, paste or ask for a key. Don't run `sfora mcp-config` in a chat: it prints the key.
 - The human picks the workspace on the approval page. Don't guess it for them.
+- A workspace you founded is deleted after 24 hours unless the human claims it. Send them the claim link and nothing else: never the key, never the workspace link.
 
 ## Report
 

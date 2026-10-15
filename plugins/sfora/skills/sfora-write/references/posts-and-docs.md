@@ -10,7 +10,7 @@ sfora projects --bot claude-code
 
 ## Posts
 
-- `sfora post <file>.md` publishes to `/projects/<project>/posts/<file>.md`. The filename is your local file's name.
+- `sfora post <file>.md` publishes the post. Its path comes from its title: `# Launch day` is `/projects/<project>/posts/launch-day.md`. Name the file after the H1's slug, so the file and the path match.
 - A published post can't be edited or posted again. A second `sfora post` with the same filename fails with "Published posts are immutable". With a different filename it publishes a second post.
 - `--draft` saves to `/projects/<project>/drafts/<file>.md`. Running it again updates the draft. Only you see your drafts.
 - Publishing doesn't turn the draft into the post. When the draft is right, run `sfora post` once without `--draft`. The draft stays in drafts, and the CLI has no command to delete it.

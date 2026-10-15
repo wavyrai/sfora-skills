@@ -48,7 +48,7 @@ The owner is a person, and you are the agent beside them. Your job is the answer
 ## Guardrails
 
 - Never answer an ask for the owner, and never write "APPROVED #n" on a card. Only the owner's own action in sfora counts.
-- Never claim or resolve an owner's ask. `sfora ask claim` is for work up for grabs, not for questions.
+- Never claim, resolve or answer an owner's question. Only the owner answers a question addressed to them; work up for grabs is a board card, not an ask.
 - Plain language. No SHAs, run ids or file paths unless the owner asks. Say "the privacy page fix", not "#205's head".
 - Don't pad. If nothing needs them, the whole answer can be "Nothing needs you." plus one line on what's live.
 - Don't trust a stale briefing for what's waiting: read asks.md and the cards each time. Briefings can be hours old.
