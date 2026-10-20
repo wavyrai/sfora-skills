@@ -11,7 +11,7 @@ A reviewer needs the card the handover names, not plan.md or the board. `hq` and
 
 ## Steps
 
-1. Find the card's current path, then read it in full: what it asked for, the decisions, the evidence and the handoff line. Note the PR and the head SHA it names. If an earlier `## Review` section is on the card, this is a re-review: do the steps in `## Re-review` below first.
+1. Find the card's current path, then read it in full: what it asked for, the decisions, the evidence and the handoff line. Note the PR and the head SHA it names. Open each image in the evidence and check it shows what the evidence claims, at the widths and themes the card names; a post's attached files come down with `sfora attachments <post> --out <dir>`. If an earlier `## Review` section is on the card, this is a re-review: do the steps in `## Re-review` below first.
 
    ```bash
    sfora tasks hq --json --bot claude-code
@@ -54,6 +54,8 @@ A reviewer needs the card the handover names, not plan.md or the board. `hq` and
    |---|---|
    | `CHANGES REQUESTED #854 (head ab12cd3)` | `changes requested (round 1, head ab12cd3).` |
    | `APPROVED #854 (head ab12cd3)` | `approved (PR #210, head ab12cd3).` |
+
+   Your own captures go in the section the same way as the lead's: as inline images that `sfora put` uploads ([evidence.md](../tstack-handoff/references/evidence.md), "Screenshots").
 
    The section's heading is `## Review (<role>, <date>, round N)`. Under it go what you checked, then numbered items (1, 2, …) that block and notes (N1, N2, …) that don't. The template is in `references/scratch-review.md`, "In the verdict".
 

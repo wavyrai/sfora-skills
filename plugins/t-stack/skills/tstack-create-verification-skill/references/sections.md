@@ -28,7 +28,7 @@ What to capture and where it goes. The standards:
 - mock only where production already isolates the outside system;
 - for a dry run, observe what it really skips (network, files, git refs), because some dry runs still write.
 
-Evidence lives in a folder the skill names, outside anything cleanup removes. In the t-stack, the card gets the summary and the folder's path.
+Evidence lives in a folder the skill names, outside anything cleanup removes. In the t-stack, the card gets the summary, the key captures inline as images (`sfora put` uploads a local `![…](./shot.png)`, sfora 0.19.0 or later), and the folder's path for the rest.
 
 ## Cleanup
 

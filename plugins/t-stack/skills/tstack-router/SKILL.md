@@ -13,7 +13,7 @@ Every command in the t-stack is written for project `hq`, a global `sfora` and a
 
 - **The project.** `hq` stands for your project. `sfora ls /projects` lists the projects you can see, and `sfora tasks <project>` shows a board. #851 ran in project `sfora`, not `hq`.
 - **The identity.** `--bot claude-code` means "when you run as an agent member". Use your own agent name. If you are signed in as yourself (no agent key), drop `--bot` from every command.
-- **The binary.** The skills need sfora 0.18.0 or later (older ones lack `sfora answers`, which `tstack-decide` waits with). If `sfora` isn't installed, `npx sfora-cli@latest` runs the same CLI with the same arguments; a bare `npx sfora-cli` can run an older cached copy.
+- **The binary.** The skills need sfora 0.18.0 or later (older ones lack `sfora answers`, which `tstack-decide` waits with), and sfora 0.19.0 or later to put images on cards and posts (a local `![…](./shot.png)` in what you put or post, `--attach`, `sfora upload`). If `sfora` isn't installed, `npx sfora-cli@latest` runs the same CLI with the same arguments; a bare `npx sfora-cli` can run an older cached copy.
 
 ## Steps
 

@@ -53,7 +53,7 @@ The lead owns one card from start to handoff, and through every review round aft
     gh pr view <pr> --json headRefOid,mergeable
     ```
 
-12. Hand over with `tstack-handoff`: the evidence on the card, with the PR number and the gated SHA, then one READY FOR REVIEW line, then stop. The order is gate, push, PR, evidence, handoff: the evidence needs the PR number and the SHA, and both exist only after the push.
+12. Hand over with `tstack-handoff`: the evidence on the card, with the PR number and the gated SHA, then one READY FOR REVIEW line, then stop. UI captures, yours and your teammates', go in the evidence as inline images, never as paths on your disk ([evidence.md](../tstack-handoff/references/evidence.md), "Screenshots"). The order is gate, push, PR, evidence, handoff: the evidence needs the PR number and the SHA, and both exist only after the push.
 
 ## Answer a verdict
 

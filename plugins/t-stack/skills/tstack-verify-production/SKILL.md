@@ -21,6 +21,8 @@ Production is the only place a production fact is true. Docs, configs and memory
    sfora cat /projects/hq/board/03-in-progress/<card-file>.md --bot claude-code
    ```
 
+   A capture of the live page can go in as an inline image ([evidence.md](../tstack-handoff/references/evidence.md), "Screenshots"). It shows the measurement; it doesn't replace it.
+
    A public claim (a privacy page, a docs page) cites that evidence. If the measurement contradicts what's published, the fix is a new card.
 
    A probe that sends hostile traffic at production (forged headers, bad keys, a flood) is the owner's call, not yours: it can lock out real users. A lockout check sends bad keys under a forged client address, and against production that locks a real key out for the limiter's window. Run it against a non-production deployment, or ask the owner first (`tstack-decide`).

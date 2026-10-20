@@ -22,7 +22,7 @@ A briefing tells the owner, in a minute of reading, what shipped, what's moving 
 2. Write `briefing.md`. H1 "Briefing: <date>". Then:
    - **One plain paragraph.** The answer to "where are we?" in two to four sentences. Lead with what the owner must do, or with "Nothing needs you."
    - **## Waiting on you.** Each ask quoted, linked, with your recommendation and why. Each card handed over for the owner's review. If there is none, write "Nothing needs you." here too.
-   - **## Live.** What shipped, in the owner's words for it, with the card number.
+   - **## Live.** What shipped, in the owner's words for it, with the card number. One or two images of it may go here, inline from local files: `sfora post` uploads `![The new settings page](./settings.png)` (sfora 0.19.0 or later).
    - **## In progress.** One line per card that is moving, and what it waits on. Read that from the state line: "changes requested" is with its lead, "approved" waits on the merge (`references/briefing.md` has the plain words for each state).
 
 3. Save it as a draft, and read the draft through as the owner would:

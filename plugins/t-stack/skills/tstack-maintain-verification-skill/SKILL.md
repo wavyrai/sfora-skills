@@ -17,7 +17,7 @@ A feature map starts going stale the day the app changes. This pass checks every
 6. **Sort what you found:**
    - the map describes it wrongly → drift: fix the map;
    - it works but the harness can't drive it → a harness gap: fix the harness, then drive it live again;
-   - the app is broken → a product regression: file a Triage card with the evidence (`sfora-board`), and keep it out of this change.
+   - the app is broken → a product regression: file a Triage card with the evidence, a capture of the failure inline (`sfora-board`), and keep it out of this change.
 7. **End with one outcome** and say which:
    - **clean:** every feature covered, nothing to change, no branch;
    - **changed:** one PR of proven fixes to the skill's own folder, every changed file re-read first;

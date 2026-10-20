@@ -50,6 +50,8 @@ Use the slug form (`claude-code`), not "Claude Code".
 sfora comment /projects/hq/posts/<post-file>.md "<text>" --bot claude-code
 ```
 
+A comment can carry an image inline (`![after](./after.png)`, relative to where you run it) or attached with `--attach <file>` (sfora 0.19.0 or later). See `references/attachments.md`.
+
 `sfora react` toggles: running it twice removes the reaction. React once.
 
 ```bash

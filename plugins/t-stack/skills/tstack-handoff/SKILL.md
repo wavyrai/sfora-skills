@@ -18,7 +18,7 @@ A handoff is the moment the card changes hands. The card holds the record: the e
 
    Redirect stdout only (add `2>/dev/null` if you like, never `2>&1`): the URL footer `cat` prints goes to stderr and must not land in the body.
 
-2. Edit `card.md`. Append one section, `## Evidence (lead, 8 Oct)` with your role and the date (and `, round N` from round 2 on), and set your `**@agent_state:**` line, right under the H1 (add it if it's missing). Don't touch anyone else's text. What goes in the section is in `references/evidence.md`.
+2. Edit `card.md`. Append one section, `## Evidence (lead, 8 Oct)` with your role and the date (and `, round N` from round 2 on), and set your `**@agent_state:**` line, right under the H1 (add it if it's missing). Don't touch anyone else's text. What goes in the section is in `references/evidence.md`. Screenshots go in as inline images, not as paths on your disk (its "Screenshots" line).
 
 3. Read the card again just before the put; if its body changed since step 1, add your section to the new version. Then put it back and read it again. Compare from the H1 down, ignoring trailing blank lines: `lastActivityAt` and "N moved" change on every write and are normal (`references/evidence.md`). Any other difference means someone wrote in between: read the card again, merge your section into their version, and put that.
 

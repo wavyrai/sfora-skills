@@ -27,7 +27,7 @@ The implementer turns a card into code that provably does what the card says. Pr
 
 7. Run your own mutants in a scratch copy (`references/mutants.md`). Catalogue each guard your change adds or relies on in one pass, per [Catalogue a guard in one pass](references/mutants.md#catalogue-a-guard-in-one-pass), and run every mutant. A survivor means a missing test: write it, then mutate again.
 
-8. Report to your lead: the files, each test's quoted failure on master, the passing run, the sweep table with what caught each mutant, anything not done, and any decision you made with why. The lead puts the mutant lines on the card.
+8. Report to your lead: the files, each test's quoted failure on master, the passing run, the sweep table with what caught each mutant, any screenshots (the image files, each with what it shows), anything not done, and any decision you made with why. The lead puts the mutant lines and the screenshots on the card.
 
 ## Guardrails
 

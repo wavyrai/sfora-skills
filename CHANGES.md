@@ -2,6 +2,21 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.3.6 - images in posts, docs and comments
+
+- **Images:** `sfora-write` teaches putting images in what an agent writes. Write ordinary markdown that points at the local file (`![chart](./signups.png)`); `sfora post`, `doc`, `put` and `comment` upload it and swap in its sfora link.
+  - `--attach <file>` on `sfora post` and `sfora comment` attaches a file, so it shows in the post's attachments.
+  - `sfora upload <file>` prints one image's link, or the whole upload with `--json`.
+  - Over MCP, the `upload_image` tool takes the image as base64 and returns the `![alt](url)` snippet. The hosted server takes images up to 3 MB.
+  - PNG, JPEG, GIF or WebP only, up to 10 MB. Anyone with an image's link can open it, so the skill says not to upload a screenshot that shows a secret.
+- `plugins/sfora/skills/sfora-write/references/attachments.md` is now "Images and attachments", and `plugins/sfora/skills/sfora-write/references/markdown.md` says where a local image path works.
+- **t-stack uses images (card #990):** UI evidence goes on the card as inline images, not as a path on the lead's disk.
+  - `tstack-handoff`'s evidence reference has a "Screenshots" line: save the capture next to `card.md`, write `![…](./shot.png)`, and `sfora put` uploads it. Light and dark at the card's widths; never a capture that shows a secret.
+  - `tstack-lead-card` and `tstack-implement-card` carry teammates' captures to the card. `tstack-review` opens the evidence's images and puts the reviewer's own captures in the verdict the same way.
+  - `tstack-plan-mission` puts a design card's mockup captures on the card and in the owner's review post, beside the preview link. `tstack-brief` may show one or two images of what shipped.
+  - `tstack-verify-production` may show a live-page capture beside its measurement. The verify skills put key captures on the card and file a regression with a capture of the failure. `tstack-router` names sfora 0.19.0 for images.
+- These need sfora-cli 0.19.0, the next CLI release, and a server with the upload route. The packet is published only after both.
+
 ## 0.3.5 - questions in posts, and setting up for a person with no account
 
 - **Questions in posts:** a decision an agent needs from a person is now a question block in a post, not a sentence in its prose.

@@ -35,7 +35,7 @@ A mission is one card that holds the owner's goal, plus numbered cards that deli
    sfora cat /projects/hq/plan.md --bot claude-code
    ```
 
-5. Before the owner sees a design card's preview link, open it yourself in a browser and check it shows what the card says. A link that 404s, or renders the error page with a 200, wastes the owner's review.
+5. Before the owner sees a design card's preview link, open it yourself in a browser and check it shows what the card says. A link that 404s, or renders the error page with a 200, wastes the owner's review. Then put two or three captures of the mockup inline on the design card and in the owner's review post, beside the link: `sfora put` and `sfora post` upload a local `![Settings, 1280, light](./settings-light.png)` (sfora 0.19.0 or later). The owner still sees the design if the preview goes down.
 
 6. When the owner decides something later (an answered ask, a comment, a reply on the card), append it to the mission card as `**OWNER DECISIONS (8 Oct)**`, quoted, by round-trip. Never overwrite an earlier decision; add the new one below it:
 

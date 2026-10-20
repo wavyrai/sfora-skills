@@ -235,7 +235,7 @@ Limits: footnotes are numbered in the order they're first cited, whatever their 
 
 Renders in: doc, post, chat, card.
 
-Limits: `|480` after the alt text sets the width in pixels. Use a full `https://` address: relative paths aren't resolved against the doc. To attach a file to a post, see `references/attachments.md`.
+Limits: `|480` after the alt text sets the width in pixels. sfora shows `https://` addresses. A local path (`./signups.png`) works only through the CLI: `sfora post`, `doc`, `put` and `comment` upload the file and swap in its link (sfora 0.19.0 or later). To attach a file to a post, see `references/attachments.md`.
 
 ### Comments
 

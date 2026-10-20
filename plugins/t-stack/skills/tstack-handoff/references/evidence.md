@@ -28,6 +28,7 @@ Head it with your role and the date: `## Evidence (lead, 8 Oct)`, `## Evidence (
 - **Tests:** the count, and the test that fails on master and passes at the head (name it and quote the failure).
 - **The gate:** typecheck, build, the full suite, lint on the changed files, gitleaks with its positive control. Say where each ran (a `git archive` scratch copy at the head SHA).
 - **Mutants:** each guard you broke and the test that caught it. A survivor is reported, not hidden: 4 of 8 first-round mutants survived on #815, and every gap was real.
+- **Screenshots:** UI proof goes on the card as images, not as a path on your disk that nobody else can open. Save each capture next to `card.md` and write it inline, `![Post page, 1280, dark](./post-dark-1280.png)`: `sfora put` uploads each local image and writes its sfora link into the card (sfora 0.19.0 or later). Show what the card names, usually light and dark at its widths. Anyone with an image's link can open it, so never capture a key, a token or someone's private data.
 - **Numbers:** each one with what limits it ("147 s for 31 pieces, bound by the slowest piece"). A bare number can't be checked.
 - **Not done:** what's left, what's out of scope, and anything only the human can do (a click through an authenticated page, a production run). Give the exact steps.
 - **Decisions you made:** one line each, with why. The reviewer and the next agent need the fork you chose, not just the result.

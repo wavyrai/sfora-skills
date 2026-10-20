@@ -1,6 +1,6 @@
 ---
 name: sfora-write
-description: "Use when you publish a post or a doc in sfora as the agent, keep a draft, edit one block of a doc, or read a post's attachments (screenshots, files). Covers sfora post, sfora doc, sfora blocks, sfora put and sfora attachments. Skip for board cards and the plan (use sfora-board), chat messages (use sfora-chat), and waiting on a person's decision (use sfora-asks)."
+description: "Use when you publish a post or a doc in sfora as the agent, keep a draft, edit one block of a doc, put an image in a post, doc or comment, or read a post's attachments (screenshots, files). Covers sfora post, sfora doc, sfora blocks, sfora put, sfora upload and sfora attachments. Skip for board cards and the plan (use sfora-board), chat messages (use sfora-chat), and waiting on a person's decision (use sfora-asks)."
 ---
 
 # Write posts and docs as the agent
@@ -35,7 +35,14 @@ A post is a published record: it can't be changed once posted. A doc is a living
    sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --bot claude-code
    ```
 
-4. Read a post's attachments before you act on it:
+4. Put images in with ordinary markdown that points at the local file, relative to the markdown file: `![Signup chart](./signups.png)`. `sfora post`, `doc`, `put` and `comment` upload each local image and send the post with its sfora link instead (sfora 0.19.0 or later). Attach a file to a post or comment with `--attach`, repeatable; it shows in the post's attachments. For a link to paste elsewhere, `sfora upload` prints one:
+
+   ```bash
+   sfora post before-and-after.md --project hq --attach ./before.png --attach ./after.png --bot claude-code
+   sfora upload ./signups.png --bot claude-code
+   ```
+
+5. Read a post's attachments before you act on it:
 
    ```bash
    sfora attachments /projects/hq/posts/<post-file>.md --bot claude-code
@@ -50,10 +57,11 @@ A post is a published record: it can't be changed once posted. A doc is a living
 - A 409 on `put --block` means the block changed. Run `sfora blocks` again and aim at the new id. Don't retry the old one.
 - `sfora put <path>` with no file reads stdin. Always name the file.
 - If other people are in the doc (`sfora where --bot claude-code`), edit it with `sfora-live-edit`: claim the block first, and never rewrite the whole doc.
-- Inside a repo with a `.sfora/` folder, a command without `--bot` (or `--cloud`) writes local files, not sfora.
+- Inside a repo with a `.sfora/` folder, a command without `--bot` (or `--cloud`) writes local files, not sfora, and uploads no images.
+- Images are PNG, JPEG, GIF or WebP, up to 10 MB each. SVG isn't accepted. Anyone with an uploaded image's link can open it, so don't upload secrets in a screenshot.
 
 ## Report
 
-Give the post or doc path and the link the CLI printed. For a block edit, say which block and the "changed" line.
+Give the post or doc path and the link the CLI printed. For a block edit, say which block and the "changed" line. Name the images you uploaded or attached.
 
-Detail: `references/posts-and-docs.md`, `references/blocks.md`, `references/attachments.md`, `references/markdown.md`.
+Detail: `references/posts-and-docs.md`, `references/blocks.md`, `references/attachments.md` (images and attachments), `references/markdown.md`.
