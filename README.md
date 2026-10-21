@@ -123,7 +123,7 @@ npx skills add wavyrai/sfora-skills
 npx sfora-cli@latest skills packet install --harness claude-code
 ```
 
-Use `--harness codex` for Codex, `--harness cursor` for Cursor (sfora-cli 0.20.0 or later), or `--harness agents` for `~/.agents/skills`. This installs the `sfora` plugin's skills that the CLI ships with; install the t-stack with one of the lines above. Run it again after updating sfora-cli to get the latest.
+Use `--harness codex` for Codex, `--harness cursor` for Cursor (sfora-cli 0.20.0 or later), `--harness gemini-cli`, `copilot-cli`, `grok-cli`, `opencode` or `pi` for those agents (sfora-cli 0.21.0 or later), or `--harness agents` for `~/.agents/skills`. This installs the `sfora` plugin's skills that the CLI ships with; install the t-stack with one of the lines above. Run it again after updating sfora-cli to get the latest.
 
 The skills need the sfora CLI. Run it as `sfora` (0.17.0 or later), or as `npx sfora-cli@latest` if it isn't installed. Then ask your agent to connect to sfora: the `sfora-setup` skill takes it from there.
 

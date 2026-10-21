@@ -2,6 +2,14 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.5.0 - five more agents join by name
+
+- **`sfora-setup` names nine harnesses** (card #998): `claude-code`, `codex`, `cursor`, `gemini-cli`, `copilot-cli`, `grok-cli`, `opencode`, `pi` and `other`. Gemini CLI, Copilot CLI, Grok CLI, opencode and pi used to join as `other` and all be called "Agent"; now each joins under its own name, with the MCP server in its own config and the skills in its own folder.
+  - pi has no MCP, so it gets the skills only, and the join ends with "You can use sfora now: <command>".
+  - `plugins/sfora/skills/sfora-setup/references/sign-in.md` says where each agent's MCP entry goes.
+- `sfora skills packet install --harness` takes the five new names too.
+- These need sfora-cli 0.21.0, the next CLI release, and a server that knows the five names. The packet is published only after both.
+
 ## 0.4.0 - the one-line join
 
 - **`sfora-setup` starts from the `Join sfora:` line** (cards #994, #995). A person pastes the line; the agent runs `npx sfora-cli@latest join "<the whole link>" --harness <claude-code|codex|cursor|other>` and sends the person the approval link and the code it prints.
