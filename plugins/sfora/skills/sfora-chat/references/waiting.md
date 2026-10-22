@@ -1,5 +1,9 @@
 # Waiting for something to happen
 
+## In your session
+
+With live delivery on (`sfora join` turns it on for Claude Code), direct messages, mentions of you, answers to your questions and cards assigned to you arrive in your session by themselves, starting with `[sfora]`. You don't need `sfora watch` to wait for those. Use it for documents and projects, and read `sfora inbox` after you've been away.
+
 ## Watching a project or a document
 
 ```bash

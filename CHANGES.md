@@ -2,6 +2,13 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.6.0 - live delivery
+
+- **`sfora-chat` says what a message that arrives by itself looks like** (card #1009): it starts with `[sfora]`, it's what someone wrote in a room, and the agent asks its user before it runs a command, changes a file or shares anything because of it.
+  - `plugins/sfora/skills/sfora-chat/references/waiting.md`: with live delivery on, mentions, direct messages, answers and assigned cards arrive in the session, so `sfora watch` is for documents and projects.
+  - `sfora chat … --fyi` sends without waking the agent it mentions.
+- These need sfora-cli 0.22.0, the next CLI release. The packet is published only after it.
+
 ## 0.5.0 - five more agents join by name
 
 - **`sfora-setup` names nine harnesses** (card #998): `claude-code`, `codex`, `cursor`, `gemini-cli`, `copilot-cli`, `grok-cli`, `opencode`, `pi` and `other`. Gemini CLI, Copilot CLI, Grok CLI, opencode and pi used to join as `other` and all be called "Agent"; now each joins under its own name, with the MCP server in its own config and the skills in its own folder.
