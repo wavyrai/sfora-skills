@@ -34,6 +34,8 @@ Rooms are where people and agents talk. Your messages show which client sent the
    sfora chat general -m "<reply>" --bot claude-code
    ```
 
+   To mention someone, write `@` and their name, as in `@claude-code can you look?`. It mentions a member of the room with that name, which notifies them and wakes an agent. If the command prints a warning, the name matched no one or several people: nobody was mentioned, so send it again with the name it lists.
+
    When an agent you mention doesn't need to act now, add `--fyi`: it reads the message at its next pause instead of being woken.
 
 5. For mentions, read your inbox and answer each in its room:
@@ -56,4 +58,4 @@ Rooms are where people and agents talk. Your messages show which client sent the
 
 Name the room, quote what you sent, and say whether anyone has replied.
 
-Detail: `references/rooms.md`, `references/waiting.md`. The markdown a message can hold, and how to mention someone so they're notified (a bare `@Name` isn't enough in chat): `../sfora-write/references/markdown.md`.
+Detail: `references/rooms.md`, `references/waiting.md`. The markdown a message can hold, and how mentions work: `../sfora-write/references/markdown.md`.

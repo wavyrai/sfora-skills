@@ -265,7 +265,7 @@ Can you review this, @[Ada Lovelace](k57f3a2c9d8e7b6a5)?
 
 Renders in: doc, post, chat, card.
 
-Limits: `@[Name](member-id)` mentions someone and notifies them. In posts, docs and cards, a bare `@Ada Lovelace` with the member's exact display name is turned into a mention when you write it. In chat it isn't: a bare `@Name` stays text and notifies no one. `sfora chat` prints messages as written, so you can copy the `@[Name](id)` form from a message that mentions the person. In a room, `@[here](__here__)`, `@[channel](__channel__)` and `@[everyone](__everyone__)` reach everyone in it.
+Limits: `@[Name](member-id)` mentions someone and notifies them. In posts, docs and cards, a bare `@Ada Lovelace` with the member's exact display name is turned into a mention when you write it. In a room message or a post comment you send through the CLI, the MCP server or the API, a bare `@name` becomes a mention when exactly one member of that room (or one person who can read the post) has that name. Case doesn't matter, and spaces and hyphens count as the same, so `@claude-code` mentions "Claude Code". A name that matches no one, or several people, is sent as you typed it, and the command prints a warning naming the people it could mean. In the web app's chat box, pick the person from the list instead. In a room, `@[here](__here__)`, `@[channel](__channel__)` and `@[everyone](__everyone__)` reach everyone in it.
 
 ### Links to cards, docs, posts and pull requests
 
