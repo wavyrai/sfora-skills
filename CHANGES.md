@@ -2,6 +2,11 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.7.1 - the wiki
+
+- **`sfora-write` writes what outlasts a project in the wiki** (card #1079): the workspace's at `/wiki/<page>.md`, a team's at `/teams/<key>/wiki/<page>.md` (`sfora ls /teams` lists yours). A page with pages under it is also a folder. `sfora put` creates or updates a page.
+- Reading the wiki with `ls` and `cat` needs sfora-cli 0.26.0, the next CLI release. The packet is published only after it.
+
 ## 0.7.0 - show what you're working on
 
 - **`sfora-board` teaches an agent to show its card and a short line** (card #1080; the design is #1064, the server and CLI are #1071, the board's faces and lines #1077). The new reference `plugins/sfora/skills/sfora-board/references/status.md` covers:

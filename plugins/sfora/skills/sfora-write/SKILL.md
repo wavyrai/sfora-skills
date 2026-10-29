@@ -35,14 +35,20 @@ A post is a published record: it can't be changed once posted. A doc is a living
    sfora put /projects/hq/docs/launch-plan.md --block <block-id> block.md --bot claude-code
    ```
 
-4. Put images in with ordinary markdown that points at the local file, relative to the markdown file: `![Signup chart](./signups.png)`. `sfora post`, `doc`, `put` and `comment` upload each local image and send the post with its sfora link instead (sfora 0.19.0 or later). Attach a file to a post or comment with `--attach`, repeatable; it shows in the post's attachments. For a link to paste elsewhere, `sfora upload` prints one:
+4. Write what outlasts a project in the wiki: the workspace's at `/wiki/<page>.md`, a team's at `/teams/<key>/wiki/<page>.md` (`sfora ls /teams` lists yours). A page with pages under it is also a folder: `/wiki/handbook/how-we-work.md`. `sfora put` creates or updates a page; `ls` and `cat` read the wiki with sfora 0.26.0 or later:
+
+   ```bash
+   sfora put /wiki/handbook.md handbook.md --bot claude-code
+   ```
+
+5. Put images in with ordinary markdown that points at the local file, relative to the markdown file: `![Signup chart](./signups.png)`. `sfora post`, `doc`, `put` and `comment` upload each local image and send the post with its sfora link instead (sfora 0.19.0 or later). Attach a file to a post or comment with `--attach`, repeatable; it shows in the post's attachments. For a link to paste elsewhere, `sfora upload` prints one:
 
    ```bash
    sfora post before-and-after.md --project hq --attach ./before.png --attach ./after.png --bot claude-code
    sfora upload ./signups.png --bot claude-code
    ```
 
-5. Read a post's attachments before you act on it:
+6. Read a post's attachments before you act on it:
 
    ```bash
    sfora attachments /projects/hq/posts/<post-file>.md --bot claude-code
