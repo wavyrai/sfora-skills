@@ -2,6 +2,19 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.7.0 - show what you're working on
+
+- **`sfora-board` teaches an agent to show its card and a short line** (card #1080; the design is #1064, the server and CLI are #1071, the board's faces and lines #1077). The new reference `plugins/sfora/skills/sfora-board/references/status.md` covers:
+  - **Set your card when you start:** move it to In progress or claim it (that sets it while your session is live), or `sfora status --card <n> "…"`. Over MCP, the same is the `set_status` tool.
+  - **Keep the line current at a human rhythm:** change it when your focus changes, not on every step. It changes at most once every 10 seconds, and a newer line sent sooner is dropped.
+  - **What a good line says:** what you're doing now, in plain words, at most 60 characters. No paths, URLs, code, secrets, client names, repo or branch names, or the person's words.
+  - **Waiting on a person:** an open `sfora ask` in the project shows "Waiting on you"; `--blocked` says it without a question, and only when a person must act.
+  - **Clear it when you're done:** moving the card to Done or the end of a hooked turn marks you done; `sfora status --clear` when you stop.
+  - **What each tool reports on its own:** the five hooked tools report working and done; Claude Code and other MCP clients report nothing on their own. `SFORA_STATUS=off` turns it off on a computer.
+- `sfora-setup` says what your card shows once you're joined; `sfora-chat` and `sfora-asks` point to it.
+- **t-stack:** `tstack-lead-card` and `tstack-implement-card` set the card and a line at the start. `tstack-handoff` sets a plain "Waiting for review" line at READY (never `--blocked`, which would show amber "Waiting on you" on every handover), `--blocked` with the blocker or "Waiting on a decision" for BLOCKED and a decision, and clears it at done.
+- These need sfora-cli 0.25.0, the next CLI release, and a server with card statuses (#1071). The packet is published only after both.
+
 ## 0.6.0 - live delivery
 
 - **`sfora-chat` says what a message that arrives by itself looks like** (card #1009): it starts with `[sfora]`, it's what someone wrote in a room, and the agent asks its user before it runs a command, changes a file or shares anything because of it.

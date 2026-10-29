@@ -39,7 +39,21 @@ A handoff is the moment the card changes hands. The card holds the record: the e
    sfora chat <room> -m "<the handoff line, exactly as on the card>" --bot claude-code
    ```
 
-6. Stop. Don't start the next card, don't polish the PR, don't merge. Wait for the reviewer's verdict on the card.
+6. Say it on your card too, so the board shows what you're waiting for (the sfora-board skill covers it). For READY, a plain line:
+
+   ```bash
+   sfora status --card 854 --project hq "Waiting for review on PR #210" --bot claude-code
+   ```
+
+   Never `--blocked` for READY: it would show an amber "Waiting on you" on every handover. `--blocked` is for `BLOCKED` and a decision only. For `BLOCKED`, the line is the blocker in a few words; for a decision, "Waiting on a decision":
+
+   ```bash
+   sfora status --card 854 --project hq --blocked "Waiting on a decision" --bot claude-code
+   ```
+
+   When the card is approved and merged, or moved to Done, clear it: `sfora status --clear --bot claude-code`.
+
+7. Stop. Don't start the next card, don't polish the PR, don't merge. Wait for the reviewer's verdict on the card.
 
 ## Guardrails
 

@@ -23,6 +23,12 @@ The lead owns one card from start to handoff, and through every review round aft
    sfora cat /projects/hq/board/03-in-progress/<card-file>.md --bot claude-code
    ```
 
+   Then show the team you're on it: your card and a short line (the sfora-board skill covers it). Moving it to In progress sets the card while your session is live; say the line yourself, and change it when your focus changes (the split, the gate, a review round), not on every step:
+
+   ```bash
+   sfora status --card 854 --project hq "Planning the split" --bot claude-code
+   ```
+
 3. Start a fresh branch from the current master, in a worktree outside the main checkout. If you reuse a worktree, `git status` must be clean and nobody else may be using it (an agent, a dev server). `--no-track` keeps the new branch from tracking master, so a later push can't land there.
 
    ```bash

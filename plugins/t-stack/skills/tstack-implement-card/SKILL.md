@@ -15,6 +15,8 @@ The implementer turns a card into code that provably does what the card says. Pr
    sfora cat /projects/hq/board/03-in-progress/<card-file>.md --bot claude-code
    ```
 
+   Show that you're on it: `sfora status --card 854 --project hq "Writing the failing test" --bot claude-code`. Change the line when your slice moves on (the test, the fix, the mutants), and clear it (`sfora status --clear`) when you've reported to your lead.
+
 2. If the card is wrong (a bad premise, a base that moved, a number that doesn't add up), tell your lead before you build. Don't silently widen or narrow the scope.
 
 3. Write the test first. Name the defect it catches ("a member of another org can read the card"), and assert the result the card requires, through the public interface. `tstack-tdd` covers the craft.

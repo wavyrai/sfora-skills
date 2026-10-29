@@ -40,6 +40,8 @@ A decision you need from a person is a question block in a post, not a sentence 
    sfora answers /projects/hq/posts/sync-worker-decisions.md --wait 600 --bot claude-code
    ```
 
+   While a question you asked in a project is open, your card on that project shows "Waiting on you" and links to it (`../sfora-board/references/status.md`). Nothing to do: it clears when the question is answered.
+
    Exit 0: every question is answered. Exit 1: the wait ran out and they're still open, so check again later with the same command. Exit 3: a question expired or was withdrawn (see Guardrails).
 
 4. Work up for grabs goes on the board, not in an ask: a card in To do that nobody has taken. Find it, pick it up and close it with `sfora-board`.
