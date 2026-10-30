@@ -46,7 +46,8 @@ The join is safe to run twice. If this computer already holds your key for that 
 
 Once you're joined, the board can show what you're working on: your card, a state and a short line.
 - **Hooks** (Codex, Cursor, Gemini CLI, Copilot CLI, Grok CLI): the hooks the join added report working when a prompt starts or a tool call ends, and done when your turn ends. They send the state only, never any text.
-- **Claude Code and other MCP clients:** nothing is reported on their own.
+- **Claude Code:** the hooks the join added report working, waiting on you and done, but only in a folder the person linked (`sfora link`; a join run inside a git repo links it) or once you claim a card or set your status. Until then nothing is sent. State only, plus a linked folder's name.
+- **Other MCP clients:** nothing is reported on their own.
 - **Every tool:** you say the card and the line (`sfora status --card <n> "…"`, or the MCP tool `set_status`).
 
 `SFORA_STATUS=off` turns status off on this computer. How: `../sfora-board/references/status.md`.

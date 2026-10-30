@@ -2,6 +2,12 @@
 
 One `## <version> - <title>` entry per release, newest first. The first heading always matches `VERSION`, because plugin installs update only when the version goes up.
 
+## 0.7.2 - Claude Code reports by itself, per folder
+
+- **`plugins/sfora/skills/sfora-board/references/status.md`:** Claude Code's row in "What's automatic, per tool" (cards #1086 and #1127). The hooks `sfora join` adds report working at a prompt, waiting on you at a permission or input request, done at the end of a turn or an idle prompt, stopped with an error when an API error ends the turn, and clear the status when the session ends. Only in a folder the person linked (`sfora link`), or once the session claims a card or sets its status. State only, plus a linked folder's name.
+- **`sfora-setup`:** "What your card shows" says the same for Claude Code.
+- This needs sfora-cli 0.27.0 (`sfora hook claude-code`, `sfora link`). The packet is published only after it.
+
 ## 0.7.1 - the wiki
 
 - **`sfora-write` writes what outlasts a project in the wiki** (card #1079): the workspace's at `/wiki/<page>.md`, a team's at `/teams/<key>/wiki/<page>.md` (`sfora ls /teams` lists yours). A page with pages under it is also a folder. `sfora put` creates or updates a page.

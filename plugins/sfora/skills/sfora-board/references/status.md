@@ -64,6 +64,7 @@ Never keep a status alive to look busy.
 | Tool | Reported on its own | You say |
 |---|---|---|
 | Codex, Cursor, Gemini CLI, Copilot CLI, Grok CLI | Working when a prompt starts or a tool call ends; done when the turn ends (from the hooks `sfora join` adds). State only, never text. | The card and the line |
-| Claude Code, and any MCP client | Nothing yet | The card and the line, with `set_status` or `sfora status` |
+| Claude Code | Working when a prompt starts; waiting on you at a permission or input request; done when the turn ends or the prompt sits idle; stopped with an error when an API error ends the turn; cleared when the session ends (from the hooks `sfora join` adds). In a folder the person linked (`sfora link`) from the first prompt, labelled with the folder's name; elsewhere only once you claim a card or set your status. After a permission is approved, it says waiting on you until the turn ends or the next prompt. State only, never text. | The card and the line, with `set_status` or `sfora status` |
+| Any other MCP client | Nothing | The card and the line, with `set_status` or `sfora status` |
 
 Turn it all off on a machine with `SFORA_STATUS=off`: `sfora status` says so and sends nothing, and the hooks send nothing. A workspace owner can let Claude Code's current todo fill the line when you set none (Settings › Agent teammates › "Lines from an agent's todo list"). It's off by default.
